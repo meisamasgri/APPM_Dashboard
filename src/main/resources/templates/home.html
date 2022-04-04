@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Dashboard</title>
+
+    <!-- StyleSheet CSS -->
+    <link rel="stylesheet" href="lib/fontawesome/css/all.min.css">
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+
+    <!-- AdminLTE -->
+    <link rel="stylesheet" href="lib/adminlte/dist/css/adminlte.min.css">
+
+    <!-- Overlay Scrollbars -->
+    <link rel="stylesheet" href="lib/overlayScrollbars/css/OverlayScrollbars.min.css">
+
+</head>
+
+<body class="sidebar-mini layout-fixed" style="height: auto;">
+
+<div class="wrapper">
+
+    <!-- TOP NAVBAR -->
+    <div th:replace="template-topnav.html"></div>
+
+    <!-- SIDEBAR -->
+    <div th:replace="template-sidebar.html"></div>
+
+
+    <!--------------------------- MAIN CONTENT --------------------------------->
+    <div class="content-wrapper bg-dark" style="min-height: 521px;">
+
+        <section class="content">
+            <div class="container-fluid">
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div th:replace="template-footer.html"></div>
+
+</div>
+
+    <!-- JAVASCRIPT JS -->
+    <script th:replace="template-script.html"></script>
+
+</body>
+</html>

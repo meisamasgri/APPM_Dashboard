@@ -16,6 +16,10 @@ public class AppmApiKey {
     private String name;
 
     @Basic
+    @Column(name = "description")
+    private String description;
+
+    @Basic
     @Column(name = "ip_address")
     private String ipAddress;
 
@@ -27,10 +31,13 @@ public class AppmApiKey {
     @Column(name = "api_key")
     private String apiKey;
 
+    public AppmApiKey() {
+    }
 
-    public AppmApiKey(Integer id, String name, String ipAddress, String port, String apiKey) {
+    public AppmApiKey(Integer id, String name, String description, String ipAddress, String port, String apiKey) {
         this.id = id;
         this.name = name;
+        this.description = description;
         this.ipAddress = ipAddress;
         this.port = port;
         this.apiKey = apiKey;
@@ -50,6 +57,14 @@ public class AppmApiKey {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public String getIpAddress() {
@@ -77,13 +92,12 @@ public class AppmApiKey {
     }
 
 
-
-
     @Override
     public String toString() {
         return "AppmApiKey{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", description='" + description + '\'' +
                 ", ipAddress='" + ipAddress + '\'' +
                 ", port='" + port + '\'' +
                 ", apiKey='" + apiKey + '\'' +

@@ -1,48 +1,61 @@
-<div class="modal fade" id="modalAddAppm" aria-modal="true" role="dialog" style="padding-right: 17px; display: block;">
-    <div class="modal-dialog">
+<div class="modal" style="display:none" id="modalAddAppm">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Default Modal</h4>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
+
+            <!-- FORM HEADER -->
+            <div class="modal-header text-white" style="background: rgb(45,45,45)">
+                <h5 class="modal-title font-weight-semibold mb-0" >Add Appmanager</h5>
+<!--                <button type="button" class="bg-transparent border-0 shadow-none" id="closeDeleteDeptModal"><h5>×</h5>-->
+                <button id="btnCloseModalAddAppm" type="button" class="btn-close btn-close-white my-0" data-bs-dismiss="modal" aria-label="Close"></button>
+
                 </button>
             </div>
-            <div class="modal-body">
 
-<!--                <form>-->
-<!--                    <div class="card-body">-->
-<!--                        <div class="form-group">-->
-<!--                            <label for="exampleInputEmail1">Email address</label>-->
-<!--                            <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">-->
-<!--                        </div>-->
-<!--                        <div class="form-group">-->
-<!--                            <label for="exampleInputPassword1">Password</label>-->
-<!--                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">-->
-<!--                        </div>-->
+            <!-- FORM BODY -->
+            <div class="modal-body text-white font-weight-semibold small" style="background: rgb(58,63,68)">
 
-<!--                        <div class="form-check">-->
-<!--                            <input type="checkbox" class="form-check-input" id="exampleCheck1">-->
-<!--                            <label class="form-check-label" for="exampleCheck1">Check me out</label>-->
-<!--                        </div>-->
-<!--                    </div>-->
+                <form>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="appmId" placeholder="ID">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="appmName"
+                                   placeholder="Name">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="appmDesc"
+                                   placeholder="Description">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="appmIp"
+                                   placeholder="IP Address">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="appmPort"
+                                   placeholder="Port">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="appmKey"
+                                   placeholder="API KEY">
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="appmAction"
+                                   placeholder="Test Action ID">
+                        </div>
 
-<!--                    <div class="card-footer">-->
-<!--                        <button type="submit" class="btn btn-primary">Submit</button>-->
-<!--                    </div>-->
-<!--                </form>-->
+
+                    </div>
+
+                    <div class="card-footer">
+                        <button type="submit" onclick="addAppm()" class="btn btn-success float-right">Add Appm</button>
+                    </div>
+                </form>
 
 
-            </div>
-            <div class="modal-footer justify-content-between">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
             </div>
         </div>
-
     </div>
-
 </div>
-
-
 
 

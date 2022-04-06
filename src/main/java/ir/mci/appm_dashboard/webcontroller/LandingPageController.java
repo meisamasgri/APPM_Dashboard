@@ -16,18 +16,17 @@ public class LandingPageController {
     @Autowired
     AppmApiKeyRepository appmApiKeyRepository;
 
-
     @GetMapping({"/"})
     public ModelAndView returnLandingPage(Model model) {
 
         //add-appm modal
         Date date = new Date();
-        AppmApiKey appmApiKey = new AppmApiKey(null,"appm_","","","9090","");
+        AppmApiKey appmApiKey = new AppmApiKey(null,"appm_","","","9090","","");
         model.addAttribute("appmApiKeyModel",appmApiKey);
 
         //view to display
         ModelAndView appmApiKeyMv = new ModelAndView("home");
-        appmApiKeyMv.addObject("appmApiKeyMv", appmApiKeyRepository.findAll());
+        appmApiKeyMv.addObject("appminfo", appmApiKeyRepository.findAll());
         appmApiKeyMv.setViewName("home");
 
         return appmApiKeyMv;

@@ -31,16 +31,21 @@ public class AppmApiKey {
     @Column(name = "api_key")
     private String apiKey;
 
+    @Basic
+    @Column(name = "test_action_id")
+    private String testActionId;
+
     public AppmApiKey() {
     }
 
-    public AppmApiKey(Integer id, String name, String description, String ipAddress, String port, String apiKey) {
+    public AppmApiKey(Integer id, String name, String description, String ipAddress, String port, String apiKey, String testActionId) {
         this.id = id;
         this.name = name;
         this.description = description;
         this.ipAddress = ipAddress;
         this.port = port;
         this.apiKey = apiKey;
+        this.testActionId = testActionId;
     }
 
     public Integer getId() {
@@ -91,6 +96,13 @@ public class AppmApiKey {
         this.apiKey = apiKey;
     }
 
+    public String getTestActionId() {
+        return testActionId;
+    }
+
+    public void setTestActionId(String testActionId) {
+        this.testActionId = testActionId;
+    }
 
     @Override
     public String toString() {
@@ -101,6 +113,7 @@ public class AppmApiKey {
                 ", ipAddress='" + ipAddress + '\'' +
                 ", port='" + port + '\'' +
                 ", apiKey='" + apiKey + '\'' +
+                ", testActionId='" + testActionId + '\'' +
                 '}';
     }
 }

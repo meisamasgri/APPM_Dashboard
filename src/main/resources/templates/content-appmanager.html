@@ -1,0 +1,61 @@
+<div id="content-appmanager" class="row">
+    <div class="col-md-12">
+        <div class="card bg-dark">
+            <div class="card-header">
+                <h3 class="card-title">Applications Manager</h3>
+                <div class="card-tools">
+                    <ul class="pagination pagination-sm float-right">
+                        <li><a href="#"><i class="fa fa-refresh px-2" title="Update"></i></a></li>
+                    </ul>
+                    <ul class="pagination pagination-sm float-right">
+                        <li><a href="#"><i id="btnAddAppm" class="fa fa-plus px-2" title="Add"></i></a></li>
+                    </ul>
+                    <ul class="pagination pagination-sm float-right">
+                        <li><a href="#"><i id="btnDelAppm" class="fa fa-minus px-2" title="Delete"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Description</th>
+                        <th>IP Address</th>
+                        <th>Port</th>
+                        <th>Nodes</th>
+                        <th>Capacity</th>
+                        <th>Label</th>
+                        <th>Test Action</th>
+                        <th>Last Update</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr th:each="appminfo : ${appminfo}">
+                        <td th:text="*{appminfo.getId()}"></td>
+                        <td th:text="*{appminfo.getName()}"></td>
+                        <td th:text="*{appminfo.getDescription()}"></td>
+                        <td th:text="*{appminfo.getIpAddress()}"></td>
+                        <td th:text="*{appminfo.getPort()}"></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+
+
+
+                    </tbody>
+                </table>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>

@@ -8,16 +8,7 @@
     <title>Dashboard</title>
 
     <!-- StyleSheet CSS -->
-    <link rel="stylesheet" href="lib/fontawesome/css/all.min.css">
-
-    <!-- Bootstrap -->
-    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
-
-    <!-- AdminLTE -->
-    <link rel="stylesheet" href="lib/adminlte/dist/css/adminlte.min.css">
-
-    <!-- Overlay Scrollbars -->
-    <link rel="stylesheet" href="lib/overlayScrollbars/css/OverlayScrollbars.min.css">
+    <style th:replace="template-style.html"></style>
 
 </head>
 
@@ -36,7 +27,20 @@
     <div class="content-wrapper bg-dark" style="min-height: 521px;">
 
         <section class="content">
-            <div class="container-fluid">
+
+            <!-- MODAL ABOUT -->
+            <div th:replace="modal-about.html"></div>
+
+            <!-- MODAL ADD APPM -->
+            <div th:replace="modal-add-appm.html"></div>
+
+            <!-- MODAL DEL APPM -->
+            <div th:replace="modal-del-appm.html"></div>
+
+            <div id="main" class="container-fluid">
+
+                <!-- APPMANAGER -->
+                <div th:replace="content-appmanager.html"></div>
 
             </div>
         </section>
@@ -50,6 +54,7 @@
 
     <!-- JAVASCRIPT JS -->
     <script th:replace="template-script.html"></script>
+    <script src="custom/js/home.js"></script>
 
 </body>
 </html>

@@ -2,7 +2,7 @@
 
 
     <!--------------------------- SIDEBAR LOGO & TITLE --------------------------------->
-    <a href="index3.html" class="brand-link">
+    <a href="#" class="brand-link">
         <img src="appm.png" alt="APPM_DASHBOARD" class="brand-image img-circle elevation-3" style="opacity: .8">
         <span class="brand-text font-weight-light small">APPM Dashboard</span>
 
@@ -19,7 +19,7 @@
                 <img src="user-profile.png" class="img-circle elevation-2" alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Alexander Pierce</a>
+                <a href="#" class="d-block">Meisam Asgari</a>
             </div>
         </div>
 
@@ -39,8 +39,8 @@
         <nav class="mt-2">
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
 
-                <li class="nav-item menu-open">
-                    <a th:href="@{/}" class="nav-link">
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="btnContentDashboard">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
                             Dashboard
@@ -49,35 +49,82 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="./index.html" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Servers</p>
+                                <p>Server</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="./index2.html" class="nav-link">
+                            <a href="#" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Services</p>
+                                <p>Service/Project</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" >
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>Appmanager</p>
+                                <p>Datacenter</p>
                             </a>
                         </li>
                     </ul>
                 </li>
 
-                <!--------------------------- NAV ITEM - WIDGET --------------------------------->
+                <!--------------------------- NAV ITEM - MONITORS --------------------------------->
                 <li class="nav-item">
-                    <a th:href="@{/src}" class="nav-link">
-                        <i class="nav-icon fas fa-database"></i>
+                    <a href="#" class="nav-link" id="btnContentMonitors">
+                        <i class="nav-icon fas fa-table"></i>
                         <p>
-                            Sources
-<!--                            <span class="right badge badge-danger">New</span>-->
+                            Monitors
                         </p>
                     </a>
+                </li>
+
+                <!--------------------------- NAV ITEM - Change Request --------------------------------->
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="btnContentChangeRequest">
+                        <i class="nav-icon fas fa-bell-slash"></i>
+                        <p>
+                            Change Request
+                        </p>
+                    </a>
+                </li>
+
+                <!--------------------------- NAV ITEM - MANAGEMENT --------------------------------->
+
+                <li class="nav-item">
+                    <a href="#" class="nav-link" id="btnContentManagement">
+                        <i class="nav-icon fas fa-cogs"></i>
+                        <p>
+                            Management
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" id="btnContentAppmanager">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>Appmanager</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>OPI</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>APP Teams</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="far fa-circle nav-icon"></i>
+                                <p>IP List</p>
+                            </a>
+                        </li>
+                    </ul>
                 </li>
 
             </ul>

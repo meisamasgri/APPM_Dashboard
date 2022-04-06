@@ -1,0 +1,44 @@
+<div class="modal" style="display:none" id="modalDelAppm">
+    <div class="modal-dialog modal-sm modal-dialog-centered">
+        <div class="modal-content">
+
+            <!-- FORM HEADER -->
+            <div class="modal-header text-white" style="background: rgb(45,45,45)">
+                <h5 class="modal-title font-weight-semibold mb-0" >Delete Appmanager</h5>
+                <button id="btnCloseModalDelAppm" type="button" class="btn-close btn-close-white my-0" data-bs-dismiss="modal" aria-label="Close"></button>
+                </button>
+            </div>
+
+            <!-- FORM BODY -->
+            <div class="modal-body text-white font-weight-semibold small" style="background: rgb(58,63,68)">
+
+                <form>
+                    <div class="card-body">
+                        <div class="form-group">
+                            <select class="form-control-sm" id="deptManager" placeholder="Select Appm" style="background: darkgrey" name="manager">
+<!--                                <option th:value="null"></option>-->
+                                <option th:each="appminfo : ${appminfo}"
+                                        th:value="${appminfo.id}"
+                                        th:text="${appminfo.name}">
+                                </option>
+                            </select>
+                        </div>
+                        <div>
+                            <a>Please be informed in next update, the nodes of deleted Applications Manager will be missed.</a>
+                        </div>
+
+
+                    </div>
+
+                    <div class="card-footer">
+                        <button type="submit" class="btn btn-danger float-right">Delete Appm</button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+

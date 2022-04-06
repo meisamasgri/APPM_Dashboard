@@ -5,8 +5,8 @@ $('.todo-list').sortable({placeholder:'sort-highlight',handle:'.handle',forcePla
 $('.textarea').summernote()
 $('.daterange').daterangepicker({ranges:{Today:[moment(),moment()],Yesterday:[moment().subtract(1,'days'),moment().subtract(1,'days')],'Last 7 Days':[moment().subtract(6,'days'),moment()],'Last 30 Days':[moment().subtract(29,'days'),moment()],'This Month':[moment().startOf('month'),moment().endOf('month')],'Last Month':[moment().subtract(1,'month').startOf('month'),moment().subtract(1,'month').endOf('month')]},startDate:moment().subtract(29,'days'),endDate:moment()},function(start,end){alert('You chose: '+start.format('MMMM D, YYYY')+' - '+end.format('MMMM D, YYYY'))})
 $('.knob').knob()
-var visitorsData={US:398,SA:400,CA:1000,DE:500,FR:760,CN:300,AU:700,BR:600,IN:800,GB:320,RU:3000}
-$('#world-map').vectorMap({map:'usa_en',backgroundColor:'transparent',regionStyle:{initial:{fill:'rgba(255, 255, 255, 0.7)','fill-opacity':1,stroke:'rgba(0,0,0,.2)','stroke-width':1,'stroke-opacity':1}},series:{regions:[{values:visitorsData,scale:['#ffffff','#0154ad'],normalizeFunction:'polynomial'}]},onRegionLabelShow:function(e,el,code){if(typeof visitorsData[code]!=='undefined'){el.html(el.html()+': '+visitorsData[code]+' new visitors')}}})
+// var visitorsData={US:398,SA:400,CA:1000,DE:500,FR:760,CN:300,AU:700,BR:600,IN:800,GB:320,RU:3000}
+// $('#world-map').vectorMap({map:'usa_en',backgroundColor:'transparent',regionStyle:{initial:{fill:'rgba(255, 255, 255, 0.7)','fill-opacity':1,stroke:'rgba(0,0,0,.2)','stroke-width':1,'stroke-opacity':1}},series:{regions:[{values:visitorsData,scale:['#ffffff','#0154ad'],normalizeFunction:'polynomial'}]},onRegionLabelShow:function(e,el,code){if(typeof visitorsData[code]!=='undefined'){el.html(el.html()+': '+visitorsData[code]+' new visitors')}}})
 var sparkline1=new Sparkline($('#sparkline-1')[0],{width:80,height:50,lineColor:'#92c1dc',endColor:'#ebf4f9'})
 var sparkline2=new Sparkline($('#sparkline-2')[0],{width:80,height:50,lineColor:'#92c1dc',endColor:'#ebf4f9'})
 var sparkline3=new Sparkline($('#sparkline-3')[0],{width:80,height:50,lineColor:'#92c1dc',endColor:'#ebf4f9'})

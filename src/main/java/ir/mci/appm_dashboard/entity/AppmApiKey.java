@@ -38,8 +38,7 @@ public class AppmApiKey {
     public AppmApiKey() {
     }
 
-    public AppmApiKey(Integer id, String name, String description, String ipAddress, String port, String apiKey, String testActionId) {
-        this.id = id;
+    public AppmApiKey(String name, String description, String ipAddress, String port, String apiKey, String testActionId) {
         this.name = name;
         this.description = description;
         this.ipAddress = ipAddress;

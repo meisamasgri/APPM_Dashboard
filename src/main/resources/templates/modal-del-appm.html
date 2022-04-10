@@ -14,8 +14,11 @@
 
                 <form>
                     <div class="card-body">
+                        <div>
+                            <a>Please be informed in next update, the nodes of deleted Applications Manager will be missed.</a>
+                        </div>
                         <div class="form-group">
-                            <select class="form-control-sm" id="deptManager" placeholder="Select Appm" style="background: darkgrey" name="manager">
+                            <select class="form-control-sm" id="delAppmId" placeholder="Select Appm" style="background: darkgrey" name="manager">
 <!--                                <option th:value="null"></option>-->
                                 <option th:each="appminfo : ${appminfo}"
                                         th:value="${appminfo.id}"
@@ -23,15 +26,13 @@
                                 </option>
                             </select>
                         </div>
-                        <div>
-                            <a>Please be informed in next update, the nodes of deleted Applications Manager will be missed.</a>
-                        </div>
+
 
 
                     </div>
 
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-danger float-right">Delete Appm</button>
+                        <button type="submit" onclick="delAppm()" class="btn btn-danger float-right">Delete Appm</button>
                     </div>
                 </form>
 

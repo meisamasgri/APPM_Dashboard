@@ -21,8 +21,8 @@ public class LandingPageController {
 
         //add-appm modal
         Date date = new Date();
-        AppmApiKey appmApiKey = new AppmApiKey(null,"appm_","","","9090","","");
-        model.addAttribute("appmApiKeyModel",appmApiKey);
+        AppmApiKey appmApiKey = new AppmApiKey("appm_","","","9090","","");
+        model.addAttribute("newAppmModel",appmApiKey);
 
         //view to display
         ModelAndView appmApiKeyMv = new ModelAndView("home");

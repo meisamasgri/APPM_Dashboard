@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
     $(".nav-link" ).attr("class","nav-link");
-    $("#content-appmanager").hide();
+
 
     $("#btnContentDashboard").click(function () {
         $(".nav-link " ).attr("class","nav-link");
@@ -166,52 +166,14 @@ function delAppm(){
 
 function executeTestAction(appmId){
 
+    var btnExecuteAction = document.querySelector('#btnExecuteAction_'+appmId);
+    btnExecuteAction.setAttribute("class","spinner-grow spinner-grow-sm");
+    btnExecuteAction.setAttribute("role","status");
+
     $.ajax({
         method: 'GET',
-        url: '/appminfo/'+appmId,
+        url: '/execute-action/'+appmId,
         success:function(data){
-
-            var btnExecuteAction = document.querySelector('#btnExecuteAction_'+appmId);
-            btnExecuteAction.setAttribute("class","spinner-grow spinner-grow-sm");
-            btnExecuteAction.setAttribute("role","status");
-
-
-            createTestActionUrl(data);
-
-
-
-        },
-        error:function(){
-            console.error('ERROR: FAILED TO GET INFORMATION OF APPM!');
-
-        }
-    });
-
-
-
-}
-
-
-function createTestActionUrl(data){
-    var id = Object.values(data)[0];
-    var ip = Object.values(data)[3];
-    var port = Object.values(data)[4];
-    var apiKey = Object.values(data)[5];
-    var actionId = Object.values(data)[6];
-
-    var urlTestAction = "http://"+ip+":"+port+"/AppManager/json/ExecuteAction?apikey="+apiKey+"&ActionId="+actionId;
-
-    sendUrlTestAction(urlTestAction , id);
-
-
-}
-
-function sendUrlTestAction(url , appmId){
-
-    $.ajax({
-        method: 'GET',
-        url: url,
-        success: function (data) {
             console.log(data);
             console.log(typeof(data));
             const obj = JSON.parse(data);
@@ -239,10 +201,70 @@ function sendUrlTestAction(url , appmId){
             }
 
 
+
         },
-        error: function () {
-            console.error('ERROR: FAILED TO GET RESPONSE FROM APPMANAGER!');
+        error:function(){
+            console.error('ERROR: FAILED TO GET RESPONSE FROM APPM!');
 
         }
-    })
+    });
+
+
+
 }
+
+//
+// function createTestActionUrl(data){
+//     var id = Object.values(data)[0];
+//     var ip = Object.values(data)[3];
+//     var port = Object.values(data)[4];
+//     var apiKey = Object.values(data)[5];
+//     var actionId = Object.values(data)[6];
+//
+//     var urlTestAction = "http://"+ip+":"+port+"/AppManager/json/ExecuteAction?apikey="+apiKey+"&ActionId="+actionId;
+//
+//     sendUrlTestAction(urlTestAction , id);
+//
+//
+// }
+//
+// function sendUrlTestAction(url , appmId){
+//
+//     $.ajax({
+//         method: 'GET',
+//         url: url,
+//         success: function (data) {
+//             console.log(data);
+//             console.log(typeof(data));
+//             const obj = JSON.parse(data);
+//             var response = Object.values(obj)[0];
+//             console.log(response);
+//
+//             var btnExecuteAction = document.querySelector('#btnExecuteAction_'+appmId);
+//             btnExecuteAction.setAttribute("class","fa fa-play");
+//
+//             if(response=="4000"){
+//
+//                 var modalTestActionBody = document.getElementById("modalTestActionBody");
+//                 modalTestActionBody.setAttribute("class","text-success");
+//                 modalTestActionBody.innerHTML="Action is executed successfully!";
+//
+//                 $("#modalTestActionResponse").modal("show");
+//
+//             }else{
+//
+//                 var modalTestActionBody = document.getElementById("modalTestActionBody");
+//                 modalTestActionBody.setAttribute("class","text-danger");
+//                 modalTestActionBody.innerHTML="Action Failed!";
+//
+//                 $("#modalTestActionResponse").modal("show");
+//             }
+//
+//
+//         },
+//         error: function () {
+//             console.error('ERROR: FAILED TO GET RESPONSE FROM APPMANAGER!');
+//
+//         }
+//     })
+// }

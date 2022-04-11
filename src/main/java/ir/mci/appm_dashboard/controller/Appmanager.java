@@ -6,10 +6,18 @@ import ir.mci.appm_dashboard.repository.AppmApiKeyRepository;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.MediaType;
+import org.springframework.http.converter.HttpMessageConverter;
+import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
+import javax.persistence.criteria.Root;
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Optional;
 
 @RestController
@@ -51,12 +59,25 @@ public class Appmanager {
 
     }
 
-    //appm info
-    @RequestMapping(value = "/appminfo/{id}", method = RequestMethod.GET)
-    public Optional<AppmApiKey> appminfo(@PathVariable Integer id) throws IOException, org.json.simple.parser.ParseException {
+    //execute action
+    @RequestMapping(value = "/execute-action/{id}", method = RequestMethod.GET)
+    public String appminfo(@PathVariable Integer id) throws IOException, org.json.simple.parser.ParseException {
 
         Optional<AppmApiKey> appmApiKey = appmApiKeyRepository.findById(id);
-        return appmApiKey;
+
+
+        String urlTestAction = "http://" + appmApiKey.get().getIpAddress() + ":" + appmApiKey.get().getPort() + "/AppManager/json/ExecuteAction?apikey=" + appmApiKey.get().getApiKey() + "&ActionId="+ appmApiKey.get().getTestActionId();
+        System.out.println(urlTestAction);
+
+        RestTemplate restTemplate = new RestTemplate();
+//        List<HttpMessageConverter<?>> messageConverters = new ArrayList<HttpMessageConverter<?>>();
+//        MappingJackson2HttpMessageConverter converter = new MappingJackson2HttpMessageConverter();
+//        converter.setSupportedMediaTypes(Collections.singletonList(MediaType.ALL));
+//        messageConverters.add(converter);
+//        restTemplate.setMessageConverters(messageConverters);
+        String testActionResponse = restTemplate.getForObject(urlTestAction, String.class);
+
+        return testActionResponse;
     }
 
 

@@ -1,0 +1,73 @@
+<div id="content-monitors" style="display:none" class="row">
+    <div class="col-md-12">
+        <div class="card bg-dark">
+            <div class="card-header">
+                <h3 class="card-title">Monitors</h3>
+                <div class="card-tools">
+                    <ul class="pagination pagination-sm float-right">
+<!--                        <li><a href="#"><i class="fa fa-refresh px-2" title="Update"></i></a></li>-->
+
+                        <li> <input id="myInput" class="form-control" type="text" placeholder="Search.."></li>
+<!--                        <li><a href="#" onclick="download_table_as_csv('appm-monitors');"><i class="nav-icon fas fa-downloads"></i></a></li>-->
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="card-body p-0">
+
+                <table id="appm-monitors" class="table table-sm">
+
+                    <thead>
+                    <tr>
+                        <th>Project</th>
+                        <th>Monitor Name</th>
+                        <th>IP Address</th>
+                        <th>Type</th>
+                        <th>Managed</th>
+                        <th>APPM</th>
+                        <th>Health Status</th>
+                        <th>Availability Status</th>
+                        <th>Poll Interval</th>
+
+<!--                        <th>Monitor Details</th>-->
+
+<!--                        <th>Report CPU Usage</th>-->
+<!--                        <th>RAM Usage</th>-->
+
+                    </tr>
+                    </thead>
+                    <tbody id="myTable">
+<!--                    <tbody>-->
+                    <tr th:each="monitorlist: ${monitorlist}">
+                        <td th:text="*{monitorlist.getProject()}"></td>
+                        <td th:text="*{monitorlist.getDisplayName()}"></td>
+                        <td th:text="*{monitorlist.getHostIp()}"></td>
+                        <td th:text="*{monitorlist.getType()}"></td>
+                        <td th:text="*{monitorlist.getManaged()}"></td>
+                        <td th:text="*{monitorlist.getAppmName()}"></td>
+                        <td th:text="*{monitorlist.getHealthStatus()}"></td>
+                        <td th:text="*{monitorlist.getAvailabilityStatus()}"></td>
+                        <td th:text="*{monitorlist.getPollInterval()}"></td>
+
+<!--                        <td>-->
+<!--                            <a th:href="${monitorlist.monURL}">Details</a>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <a th:href="${monitorlist.monCPU}">CPU Usage</a>-->
+<!--                        </td>-->
+<!--                        <td>-->
+<!--                            <a th:href="${monitorlist.monRAM}">RAM Usage</a>-->
+<!--                        </td>-->
+                    </tr>
+                    </tbody >
+
+                </table>
+            </div>
+
+
+
+        </div>
+
+    </div>
+</div>

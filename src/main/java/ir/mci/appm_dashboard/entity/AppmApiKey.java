@@ -1,6 +1,7 @@
 package ir.mci.appm_dashboard.entity;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 @Table(name = "appm_api_key")
@@ -34,6 +35,10 @@ public class AppmApiKey {
     @Basic
     @Column(name = "test_action_id")
     private String testActionId;
+
+    @Basic
+    @Column(name = "update_time")
+    private Date updateTime;
 
     public AppmApiKey() {
     }
@@ -103,6 +108,14 @@ public class AppmApiKey {
         this.testActionId = testActionId;
     }
 
+    public Date getUpdateTime() {
+        return updateTime;
+    }
+
+    public void setUpdateTime(Date updateTime) {
+        this.updateTime = updateTime;
+    }
+
     @Override
     public String toString() {
         return "AppmApiKey{" +
@@ -113,6 +126,7 @@ public class AppmApiKey {
                 ", port='" + port + '\'' +
                 ", apiKey='" + apiKey + '\'' +
                 ", testActionId='" + testActionId + '\'' +
+                ", updateTime=" + updateTime +
                 '}';
     }
 }

@@ -2,6 +2,7 @@ package ir.mci.appm_dashboard.webcontroller;
 
 import ir.mci.appm_dashboard.entity.AppmApiKey;
 import ir.mci.appm_dashboard.repository.AppmApiKeyRepository;
+import ir.mci.appm_dashboard.repository.AppmMonitorListRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -16,6 +17,9 @@ public class LandingPageController {
     @Autowired
     AppmApiKeyRepository appmApiKeyRepository;
 
+    @Autowired
+    AppmMonitorListRepository appmMonitorListRepository;
+
     @GetMapping({"/"})
     public ModelAndView returnLandingPage(Model model) {
 
@@ -27,6 +31,7 @@ public class LandingPageController {
         //view to display
         ModelAndView appmApiKeyMv = new ModelAndView("home");
         appmApiKeyMv.addObject("appminfo", appmApiKeyRepository.findAll());
+        appmApiKeyMv.addObject("monitorlist", appmMonitorListRepository.findAll());
         appmApiKeyMv.setViewName("home");
 
         return appmApiKeyMv;

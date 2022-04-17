@@ -5,11 +5,7 @@ import ir.mci.appm_dashboard.entity.AppmApiKey;
 import ir.mci.appm_dashboard.entity.AppmMonitorList;
 import ir.mci.appm_dashboard.repository.AppmApiKeyRepository;
 
-//import ir.mci.appm_dashboard.repository.sync.SyncResponseRepository;
-//import ir.mci.appm_dashboard.repository.sync.SyncResultRepository;
-//import ir.mci.appm_dashboard.repository.sync.SyncRootRepository;
 import ir.mci.appm_dashboard.repository.AppmMonitorListRepository;
-import ir.mci.appm_dashboard.repository.sync.SyncResultRepository;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -85,15 +81,6 @@ public class Appmanager {
         return testActionResponse;
     }
 
-//
-//    @Autowired
-//    SyncRootRepository syncRootRepository;
-//
-//    @Autowired
-//    SyncResponseRepository syncResponseRepository;
-//
-    @Autowired
-    SyncResultRepository syncResultRepository;
 
     @Autowired
     AppmMonitorListRepository appmMonitorListRepository;
